@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_navigation"
+    app:startDestination="@id/introFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.numbergame_160420048.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/actionMainFragment"
+            app:destination="@id/endFragment" />
+        <argument
+            android:name="playerName"
+            app:argType="string" />
+        <action
+            android:id="@+id/actionMainFragmentSelf"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/endFragment"
+        android:name="com.example.numbergame_160420048.EndFragment"
+        android:label="fragment_end"
+        tools:layout="@layout/fragment_end" >
+        <action
+            android:id="@+id/action_endFragment_to_introFragment2"
+            app:destination="@id/introFragment" />
+        <argument
+            android:name="score"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="com.example.numbergame_160420048.IntroFragment"
+        android:label="fragment_intro"
+        tools:layout="@layout/fragment_intro" >
+        <action
+            android:id="@+id/actionIntroFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>
